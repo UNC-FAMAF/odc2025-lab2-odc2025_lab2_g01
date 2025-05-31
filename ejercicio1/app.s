@@ -1,8 +1,4 @@
-	.equ SCREEN_WIDTH,      640
-	.equ SCREEN_HEIGHT,     480
-	.equ BITS_PER_PIXEL,    32
-	.equ BYTES_PER_PIXEL,   BITS_PER_PIXEL / 8
-
+	.include "formas.s"
 	.globl main
 
 .data
@@ -26,6 +22,9 @@ loop0:
     cbnz x1, loop0
     sub x2, x2, #1
     cbnz x2, loop1
+
+draw:
+    bl pasto
 
 InfLoop:
 	b InfLoop
