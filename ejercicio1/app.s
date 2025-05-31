@@ -25,10 +25,13 @@ loop0:
 
 draw:
     bl pasto
+    bl piedras
+    bl sombras_piedras
     //aca irian los bl's previos a:
     bl parte_delantera
     bl parte_lateral
-
+    bl brazos
+    bl piernas
 
 InfLoop:
 	b InfLoop
