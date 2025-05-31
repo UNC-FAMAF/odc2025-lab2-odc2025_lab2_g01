@@ -25,6 +25,10 @@ loop0:
 
 draw:
     bl pasto
+    //aca irian los bl's previos a:
+    bl parte_delantera
+    bl parte_lateral
+
 
 InfLoop:
 	b InfLoop
