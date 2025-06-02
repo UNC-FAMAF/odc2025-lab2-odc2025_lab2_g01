@@ -32,7 +32,7 @@ draw:
     bl parte_lateral
     bl botones
     //bl detalles_lateral
-    //bl cara
+    bl cara
     //bl bordes_cara
     //bl ojos_boca
     bl brazos

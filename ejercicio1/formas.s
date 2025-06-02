@@ -1243,7 +1243,16 @@ botones:
 ////////////////ACA VA DETALLES LATERAL/////////////
 
 
-///////////////ACA VA CARA////////////////
+cara:
+
+    ldr x1, =CELESTE_CARA
+	mov x2, 229                 // x0
+	mov x3, 149                 // y0
+	mov x4, 129                 // ancho
+	mov x5, 83                 // alto
+	mov x6, SCREEN_WIDTH        // ancho de pantalla
+	mov x0, x20    // dirección base del framebuffer
+	bl draw_rect
 
 
 /////////////////ACA VA BORDES CARA///////////
