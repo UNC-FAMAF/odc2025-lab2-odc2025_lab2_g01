@@ -1255,7 +1255,43 @@ cara:
 	bl draw_rect
 
 
-/////////////////ACA VA BORDES CARA///////////
+bordes_cara:
+
+    ldr x1,=AZUL_BORDE	
+	mov x2, 229                 // x0
+	mov x3, 141                 // y0
+	mov x4, 129                 // ancho
+	mov x5, 8                 // alto
+	mov x6, SCREEN_WIDTH        // ancho de pantalla
+	mov x0, x20    // dirección base del framebuffer
+	bl draw_rect
+	
+	ldr x1,=AZUL_BORDE	
+	mov x2, 221                 // x0
+	mov x3, 149                 // y0
+	mov x4, 8                 // ancho
+	mov x5, 83                 // alto
+	mov x6, SCREEN_WIDTH        // ancho de pantalla
+	mov x0, x20    // dirección base del framebuffer
+	bl draw_rect
+	
+	ldr x1,=AZUL_BORDE	
+	mov x2, 229                 // x0
+	mov x3, 232                 // y0
+	mov x4, 129                 // ancho
+	mov x5, 8                 // alto
+	mov x6, SCREEN_WIDTH        // ancho de pantalla
+	mov x0, x20    // dirección base del framebuffer
+	bl draw_rect
+
+	ldr x1,=AZUL_BORDE	
+	mov x2, 358                 // x0
+	mov x3, 149                 // y0
+	mov x4, 8                 // ancho
+	mov x5, 83                 // alto
+	mov x6, SCREEN_WIDTH        // ancho de pantalla
+	mov x0, x20    // dirección base del framebuffer
+	bl draw_rect
 
 
 
