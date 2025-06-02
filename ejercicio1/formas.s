@@ -1101,7 +1101,143 @@ parte_lateral:
 	mov x0, x20    // dirección base del framebuffer
 	bl draw_rect
 
-///////////////ACA VA BOTONES////////////
+
+botones:
+	ldr x1,=BLACK
+	mov x2, 229                 // x0
+	mov x3, 323                 // y0
+	mov x4, 15                 // ancho
+	mov x5, 8                 // alto
+	mov x6, SCREEN_WIDTH        // ancho de pantalla
+	mov x0, x20    // dirección base del framebuffer
+	bl draw_rect
+
+	ldr x1, =BLACK	
+	mov x2, 252                 // x0
+	mov x3, 323                 // y0
+	mov x4, 15                 // ancho
+	mov x5, 8                 // alto
+	mov x6, SCREEN_WIDTH        // ancho de pantalla
+	mov x0, x20    // dirección base del framebuffer
+	bl draw_rect
+
+	ldr x1,=AMARILLO	
+	mov x2, 237                 // x0
+	mov x3, 278                 // y0
+	mov x4, 7                 // ancho
+	mov x5, 22                 // alto
+	mov x6, SCREEN_WIDTH        // ancho de pantalla
+	mov x0, x20    // dirección base del framebuffer
+	bl draw_rect
+
+	ldr x1,=AMARILLO	
+	mov x2, 229                 // x0
+	mov x3, 286                 // y0
+	mov x4, 22                 // ancho
+	mov x5, 7                 // alto
+	mov x6, SCREEN_WIDTH        // ancho de pantalla
+	mov x0, x20    // dirección base del framebuffer
+	bl draw_rect
+
+	ldr x1,=AZUL	
+	mov x2, 305                 // x0
+	mov x3, 294                 // y0
+	mov x4, 7                 // ancho
+	mov x5, 7                 // alto
+	mov x6, SCREEN_WIDTH        // ancho de pantalla
+	mov x0, x20    // dirección base del framebuffer
+	bl draw_rect
+
+	ldr x1,=AZUL
+	mov x2, 298                 // x0
+	mov x3, 301                 // y0
+	mov x4, 22                 // ancho
+	mov x5, 7                 // alto
+	mov x6, SCREEN_WIDTH        // ancho de pantalla
+	mov x0, x20    // dirección base del framebuffer
+	bl draw_rect
+
+	mov x0, x20    
+	ldr x4, =SOMBRA_B	
+	mov x1, 339                
+	mov x2, 300                
+	mov x3, 7                 
+	bl draw_circle
+
+	mov x0, x20    
+	ldr x4, =VERDE_MANZANA	
+	mov x1, 335                
+	mov x2, 300                
+	mov x3, 7                 
+	bl draw_circle
+
+	mov x0, x20    
+	ldr x4, =SOMBRA_B	
+	mov x1, 321                
+	mov x2, 327                
+	mov x3, 12                 
+	bl draw_circle
+
+	mov x0, x20    
+	ldr x4, =ROJO	
+	mov x1, 315                
+	mov x2, 327                
+	mov x3, 12                 
+	bl draw_circle
+
+	ldr x1,=SOMBRA_B
+	mov x2, 244                 // x0
+	mov x3, 278                 // y0
+	mov x4, 8                 // ancho
+	mov x5, 8                 // alto
+	mov x6, SCREEN_WIDTH        // ancho de pantalla
+	mov x0, x20    // dirección base del framebuffer
+	bl draw_rect
+	
+	ldr x1,=SOMBRA_B
+	mov x2, 244                 // x0
+	mov x3, 293                 // y0
+	mov x4, 8                 // ancho
+	mov x5, 7                 // alto
+	mov x6, SCREEN_WIDTH        // ancho de pantalla
+	mov x0, x20    // dirección base del framebuffer
+	bl draw_rect
+	
+	ldr x1,=SOMBRA_B	
+	mov x2, 251                 // x0
+	mov x3, 286                 // y0
+	mov x4, 8                 // ancho
+	mov x5, 7                 // alto
+	mov x6, SCREEN_WIDTH        // ancho de pantalla
+	mov x0, x20    // dirección base del framebuffer
+	bl draw_rect
+	
+	ldr x1,=SOMBRA_B
+	mov x2, 244                 // x0
+	mov x3, 278                 // y0
+	mov x4, 8                 // ancho
+	mov x5, 8                 // alto
+	mov x6, SCREEN_WIDTH        // ancho de pantalla
+	mov x0, x20    // dirección base del framebuffer
+	bl draw_rect
+	
+	ldr x1,=SOMBRA_B	
+	mov x2, 312                 // x0
+	mov x3, 294                 // y0
+	mov x4, 8                 // ancho
+	mov x5, 7                 // alto
+	mov x6, SCREEN_WIDTH        // ancho de pantalla
+	mov x0, x20    // dirección base del framebuffer
+	bl draw_rect
+
+	ldr x1,=SOMBRA_B	
+	mov x2, 320                 // x0
+	mov x3, 301                 // y0
+	mov x4, 8                 // ancho
+	mov x5, 7                 // alto
+	mov x6, SCREEN_WIDTH        // ancho de pantalla
+	mov x0, x20    // dirección base del framebuffer
+	bl draw_rect
 
 
 ////////////////ACA VA DETALLES LATERAL/////////////

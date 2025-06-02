@@ -30,7 +30,7 @@ draw:
     bl sombras_bmo
     bl parte_delantera
     bl parte_lateral
-    //bl botones
+    bl botones
     //bl detalles_lateral
     //bl cara
     //bl bordes_cara
