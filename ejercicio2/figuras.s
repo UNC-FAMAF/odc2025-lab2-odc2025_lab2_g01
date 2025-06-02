@@ -1,0 +1,95 @@
+//TODOS LOS INCLUDE Y .EQU
+
+
+//DIBUJAR FONDO Y LOOPS
+
+
+/////////////////////////////
+//
+//
+//
+//FRAMES DE OJOS BOCA
+//
+//
+//
+//
+///////////////////////////////
+
+
+
+/////////////////////////////
+//
+//
+//
+//FRAMES ZZZ
+//
+//
+//
+//
+///////////////////////////////
+
+
+
+/////////////////////////////
+//
+//
+//
+//FRAMES PASTO
+//
+//
+//
+//
+///////////////////////////////
+
+
+/*
+FRAMES DE LA PARTE ESTATICA
+
+
+
+SOMBRAS_BMO
+
+
+
+PARTE DELANTERA
+
+
+
+PARTE LATERAL
+
+
+
+BOTONES
+
+
+
+DETALLES LATERAL
+
+
+
+CARA
+
+
+
+BORDES CARA
+
+
+
+BRAZOS
+
+
+
+PIERNAS
+
+
+
+ODC 2025
+
+
+
+PIEDRAS
+
+
+
+SOMBRAS PIEDRAS
+ */

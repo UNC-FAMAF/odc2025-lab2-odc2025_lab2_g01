@@ -6,12 +6,28 @@
 	.equ GPIO_GPFSEL0,   0x00
 	.equ GPIO_GPLEV0,    0x34
 
+	.data
+
+	//FONDO
+	//BIMO
+	//ZZZ
+	//_OJOS_BOCA
+
 	.globl main
 
 main:
 	// x0 contiene la direccion base del framebuffer
  	mov x20, x0	// Guarda la dirección base del framebuffer en x20
 	//---------------- CODE HERE ------------------------------------
+
+	//ADRP BIMO
+
+	//ADRP FONDO
+
+	//ADRP ZZZ
+
+	//ADRP OJOS BOCA
+
 
 	movz x10, 0xC7, lsl 16
 	movk x10, 0x1585, lsl 00
