@@ -1240,8 +1240,164 @@ botones:
 	bl draw_rect
 
 
-////////////////ACA VA DETALLES LATERAL/////////////
+detalles_lateral:
 
+    ldr x1, =BLACK
+	mov x2, 388                 // x0
+	mov x3, 179                 // y0
+	mov x4, 38                 // ancho
+	mov x5, 38                 // alto
+	mov x6, SCREEN_WIDTH        // ancho de pantalla
+	mov x0, x20    // dirección base del framebuffer
+	bl draw_rect
+	
+	ldr x1,=CELESTE_LATERAL	
+	mov x2, 395                 // x0
+	mov x3, 195                 // y0
+	mov x4, 7                 // ancho
+	mov x5, 7                 // alto
+	mov x6, SCREEN_WIDTH        // ancho de pantalla
+	mov x0, x20    // dirección base del framebuffer
+	bl draw_rect
+
+	ldr x1,=CELESTE_LATERAL	
+	mov x2, 411                 // x0
+	mov x3, 195                 // y0
+	mov x4, 7                 // ancho
+	mov x5, 7                 // alto
+	mov x6, SCREEN_WIDTH        // ancho de pantalla
+	mov x0, x20    // dirección base del framebuffer
+	bl draw_rect
+	
+	ldr x1,=CELESTE_LATERAL	
+	mov x2, 403                 // x0
+	mov x3, 210                 // y0
+	mov x4, 8                 // ancho
+	mov x5, 7                 // alto
+	mov x6, SCREEN_WIDTH        // ancho de pantalla
+	mov x0, x20    // dirección base del framebuffer
+	bl draw_rect
+
+	ldr x1, =BLACK	
+	mov x2, 388                 // x0
+	mov x3, 225                 // y0
+	mov x4, 38                 // ancho
+	mov x5, 38                 // alto
+	mov x6, SCREEN_WIDTH        // ancho de pantalla
+	mov x0, x20    // dirección base del framebuffer
+	bl draw_rect
+		
+	ldr x1,=CELESTE_LATERAL		
+	mov x2, 388                 // x0
+	mov x3, 240                 // y0
+	mov x4, 15                 // ancho
+	mov x5, 7                 // alto
+	mov x6, SCREEN_WIDTH        // ancho de pantalla
+	mov x0, x20    // dirección base del framebuffer
+	bl draw_rect
+	
+	ldr x1,=CELESTE_LATERAL	
+	mov x2, 419                 // x0
+	mov x3, 240                 // y0
+	mov x4, 7                 // ancho
+	mov x5, 7                 // alto
+	mov x6, SCREEN_WIDTH        // ancho de pantalla
+	mov x0, x20    // dirección base del framebuffer
+	bl draw_rect
+	
+	ldr x1, =BLACK
+	mov x2, 396                 // x0
+	mov x3, 271                 // y0
+	mov x4, 22                 // ancho
+	mov x5, 7                 // alto
+	mov x6, SCREEN_WIDTH        // ancho de pantalla
+	mov x0, x20    // dirección base del framebuffer
+	bl draw_rect
+	
+	ldr x1, =BLACK	
+	mov x2, 388                 // x0
+	mov x3, 278                 // y0
+	mov x4, 8                 // ancho
+	mov x5, 22                 // alto
+	mov x6, SCREEN_WIDTH        // ancho de pantalla
+	mov x0, x20    // dirección base del framebuffer
+	bl draw_rect
+		
+	ldr x1, =BLACK
+	mov x2, 396                 // x0
+	mov x3, 278                 // y0
+	mov x4, 7                 // ancho
+	mov x5, 8                 // alto
+	mov x6, SCREEN_WIDTH        // ancho de pantalla
+	mov x0, x20    // dirección base del framebuffer
+	bl draw_rect
+		
+	ldr x1, =BLACK	
+	mov x2, 411                 // x0
+	mov x3, 278                 // y0
+	mov x4, 15                 // ancho
+	mov x5, 8                 // alto
+	mov x6, SCREEN_WIDTH        // ancho de pantalla
+	mov x0, x20    // dirección base del framebuffer
+	bl draw_rect
+		
+	ldr x1, =BLACK	
+	mov x2, 419                 // x0
+	mov x3, 286                 // y0
+	mov x4, 7                 // ancho
+	mov x5, 14                 // alto
+	mov x6, SCREEN_WIDTH        // ancho de pantalla
+	mov x0, x20    // dirección base del framebuffer
+	bl draw_rect
+	
+	mov x0, x20    
+	ldr x4, =BLACK	
+	mov x1, 414                
+	mov x2, 122                
+	mov x3, 4                 
+	bl draw_circle
+
+	mov x0, x20    
+	ldr x4, =BLACK	
+	mov x1, 422                
+	mov x2, 137                
+	mov x3, 4                 
+	bl draw_circle
+	
+	mov x0, x20    
+	ldr x4, =BLACK	
+	mov x1, 399                
+	mov x2, 129                
+	mov x3, 4                 
+	bl draw_circle
+
+	mov x0, x20    
+	ldr x4, =BLACK	
+	mov x1, 407                
+	mov x2, 145                
+	mov x3, 4                 
+	bl draw_circle
+
+	mov x0, x20    
+	ldr x4, =BLACK	
+	mov x1, 414                
+	mov x2, 160                
+	mov x3, 4                 
+	bl draw_circle
+	
+	mov x0, x20    
+	ldr x4, =BLACK	
+	mov x1, 391                
+	mov x2, 152                
+	mov x3, 4                 
+	bl draw_circle
+
+	mov x0, x20    
+	ldr x4, =BLACK	
+	mov x1, 399                
+	mov x2, 168                
+	mov x3, 4                 
+	bl draw_circle
 
 cara:
 
@@ -1253,7 +1409,6 @@ cara:
 	mov x6, SCREEN_WIDTH        // ancho de pantalla
 	mov x0, x20    // dirección base del framebuffer
 	bl draw_rect
-
 
 bordes_cara:
 
@@ -1295,7 +1450,34 @@ bordes_cara:
 
 
 
-/////////////////ACA VA OJOS BOCA//////////////////
+ojos_boca:
+
+    ldr x1,=BLACK
+	mov x2, 244                 // x0
+	mov x3, 195                 // y0
+	mov x4, 23                 // ancho
+	mov x5, 7                 // alto
+	mov x6, SCREEN_WIDTH        // ancho de pantalla
+	mov x0, x20    // dirección base del framebuffer
+	bl draw_rect
+
+	ldr x1,=BLACK
+	mov x2, 305                 // x0
+	mov x3, 195                 // y0
+	mov x4, 23                 // ancho
+	mov x5, 7                 // alto
+	mov x6, SCREEN_WIDTH        // ancho de pantalla
+	mov x0, x20    // dirección base del framebuffer
+	bl draw_rect
+
+	ldr x1,=BLACK
+	mov x2, 282                 // x0
+	mov x3, 218                 // y0
+	mov x4, 7                 // ancho
+	mov x5, 7                 // alto
+	mov x6, SCREEN_WIDTH        // ancho de pantalla
+	mov x0, x20    // dirección base del framebuffer
+	bl draw_rect
 
 
 
@@ -1456,7 +1638,6 @@ piernas:
 	mov x0, x20    // dirección base del framebuffer
 	bl draw_rect
 
-	//////////
 
 	ldr x1, =AZUL_EXTREMIDAD	
 	mov x2, 290                 // x0
