@@ -4,12 +4,19 @@ Integrante 2: Thiago Nuñez Foruria
 Integrante 3: Luna Anahí Mauri Russo
 Integrante 4: Lara Ayoub
 
-Descripción ejercicio 1: 
+Descripción ejercicio 1: Realizamos el dibujo estatico de BMO durmiendo, personaje de Hora de Aventura , 
+en estilo pixel art con el texto integrado y diferentes formas.
 
 
-Descripción ejercicio 2:
+Descripción ejercicio 2: Utilizamos el dibujo del ejercicio 1 con ligeros cambios , tanto en la estructura del codigo como visualmente ,
+animando el pasto para simular viento y simulando un ronquido en la cara de BMO.
 
 
 Justificación instrucciones ARMv8:
+		sp (Stack Pointer ) : lo utilizamos para rastrear la posicion actual de la memoria de la pila
+		lr (Link Register) : lo utilizamos para guardar la direccion de retorno cuando llamamos a una subrutina
+		adrp (Address Page) : lo utilizamos para calcular las direcciones relativas de la memoria actual.
+		usamos :lo12: para agarrar los 12 bits menos significativos de una dirección. lo usamos para calcular direcciones de memoria.
+		los registros que tienen w los usamos porque son registros de 32 bits que nos eran utiles en ciertos contextos en el programa.
 
 
