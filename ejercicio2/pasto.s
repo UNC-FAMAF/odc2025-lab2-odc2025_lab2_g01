@@ -74,6 +74,26 @@ pasto_frame1_data:
     .quad VERDE_CLARO
     .word 442,250,8,16
     .quad VERDE_CLARO
+    .word 402,348,8,16
+    .quad VERDE_CLARO
+    .word 410,363,8,24
+    .quad VERDE_CLARO
+    .word 418,386,8,8
+    .quad VERDE_CLARO
+    .word 440,371,8,16
+    .quad VERDE_CLARO
+    .word 433,380,8,16
+    .quad VERDE_CLARO
+    .word 213, 397, 9, 8
+    .quad VERDE_CLARO
+    .word 221, 405, 8, 23
+    .quad VERDE_CLARO
+    .word 244, 389, 8, 23
+    .quad VERDE_CLARO
+    .word 237, 412, 7, 16
+    .quad VERDE_CLARO
+    .word 259, 412, 9, 16
+    .quad VERDE_CLARO
     .word 0, 0, 0, 0
     .quad 0
 
@@ -153,6 +173,26 @@ pasto_frame2_data:
     .quad VERDE_CLARO
     .word 170, 108, 7, 16
     .quad VERDE_CLARO
+    .word 410,348,8,16
+    .quad VERDE_CLARO
+    .word 418,363,8,24
+    .quad VERDE_CLARO
+    .word 418,386,8,8
+    .quad VERDE_CLARO
+    .word 433,371,8,16
+    .quad VERDE_CLARO
+    .word 433,380,8,16
+    .quad VERDE_CLARO
+    .word 221, 397, 9, 8
+    .quad VERDE_CLARO
+    .word 221, 405, 8, 23
+    .quad VERDE_CLARO
+    .word 237, 389, 8, 23
+    .quad VERDE_CLARO
+    .word 237, 412, 7, 16
+    .quad VERDE_CLARO
+    .word 259, 412, 9, 16
+    .quad VERDE_CLARO
     .word 0, 0, 0, 0
     .quad 0
 
@@ -231,6 +271,26 @@ pasto_frame3_data:
     .quad VERDE_CLARO
     .word 442,250,8,16
     .quad VERDE_CLARO
+    .word 402,348,8,16
+    .quad VERDE_CLARO
+    .word 410,363,8,24
+    .quad VERDE_CLARO
+    .word 418,386,8,8
+    .quad VERDE_CLARO
+    .word 440,371,8,16
+    .quad VERDE_CLARO
+    .word 433,380,8,16
+    .quad VERDE_CLARO
+    .word 229,397,9,8
+    .quad VERDE_CLARO
+    .word 221,405,8,23
+    .quad VERDE_CLARO
+    .word 244,389,8,23
+    .quad VERDE_CLARO
+    .word 237,412,7,16
+    .quad VERDE_CLARO
+    .word 259,412,9,16
+    .quad VERDE_CLARO
     .word 0, 0, 0, 0
     .quad 0
 
@@ -308,6 +368,26 @@ pasto_frame4_data:
     .word 183, 118, 7, 16
     .quad VERDE_CLARO
     .word 170, 108, 7, 16
+    .quad VERDE_CLARO
+    .word 410,348,8,16
+    .quad VERDE_CLARO
+    .word 418,363,8,24
+    .quad VERDE_CLARO
+    .word 418,386,8,8
+    .quad VERDE_CLARO
+    .word 433,371,8,16
+    .quad VERDE_CLARO
+    .word 433,380,8,16
+    .quad VERDE_CLARO
+    .word 221, 397, 9, 8
+    .quad VERDE_CLARO
+    .word 221, 405, 8, 23
+    .quad VERDE_CLARO
+    .word 237, 389, 8, 23
+    .quad VERDE_CLARO
+    .word 237, 412, 7, 16
+    .quad VERDE_CLARO
+    .word 259, 412, 9, 16
     .quad VERDE_CLARO
     .word 0, 0, 0, 0
     .quad 0
