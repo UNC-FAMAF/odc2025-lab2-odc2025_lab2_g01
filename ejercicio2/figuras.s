@@ -1,45 +1,220 @@
-//TODOS LOS INCLUDE Y .EQU
+.equ SCREEN_WIDTH, 		640
+.equ SCREEN_HEIGH, 		480
+
+.include "colores.s"
+.include "formas.s"
+.include "frames_zzz.s"
+.include "frames_ojos_boca.s"
+.include "parte_estatica.s"
+.include "pasto.s"
 
 
-//DIBUJAR FONDO Y LOOPS
+dibujar_fondo:
+    ldr x10, =VERDE_FONDO 
+    mov x2, SCREEN_HEIGH         // Y Size
+    
+loop1:
+    mov x1, SCREEN_WIDTH         // X Size
+loop0:
+    stur w10,[x0]                // Colorear el pixel N
+    add x0,x0,4
+    sub x1,x1,1
+    cbnz x1,loop0
+    sub x2,x2,1
+    cbnz x2,loop1
+    ret
+
+ojos_boca_frame1:
+    // El framebuffer se pasa en x0 desde el bucle principal 'main'
+    sub sp, sp, #16
+    stur lr, [sp, #0]       // Guardar LR
+
+    // x0 ya tiene el framebuffer_address
+
+    // Cargar puntero a los datos de los rectángulos para zzz_frame1
+    adrp x1, ojos_boca_frame1_data
+    add x1, x1, :lo12:ojos_boca_frame1_data
+
+    // No se necesita pasar el número de rectángulos ni un color global
+    bl draw_sprite_component // Llamar al procedimiento genérico
+
+    ldur lr, [sp, #0]
+    add sp, sp, #16
+    ret
+
+ojos_boca_frame2:
+    // El framebuffer se pasa en x0 desde el bucle principal 'main'
+    sub sp, sp, #16
+    stur lr, [sp, #0]       // Guardar LR
+
+    // x0 ya tiene el framebuffer_address
+
+    // Cargar puntero a los datos de los rectángulos para zzz_frame1
+    adrp x1, ojos_boca_frame2_data
+    add x1, x1, :lo12:ojos_boca_frame2_data
+
+    // No se necesita pasar el número de rectángulos ni un color global
+    bl draw_sprite_component // Llamar al procedimiento genérico
+
+    ldur lr, [sp, #0]
+    add sp, sp, #16
+    ret
+ojos_boca_frame3:
+    // El framebuffer se pasa en x0 desde el bucle principal 'main'
+    sub sp, sp, #16
+    stur lr, [sp, #0]       // Guardar LR
+
+    // x0 ya tiene el framebuffer_address
+
+    // Cargar puntero a los datos de los rectángulos para zzz_frame1
+    adrp x1, ojos_boca_frame3_data
+    add x1, x1, :lo12:ojos_boca_frame3_data
+
+    // No se necesita pasar el número de rectángulos ni un color global
+    bl draw_sprite_component // Llamar al procedimiento genérico
+
+    ldur lr, [sp, #0]
+    add sp, sp, #16
+    ret
+
+zzz_frame1:
+    // El framebuffer se pasa en x0 desde el bucle principal 'main'
+    sub sp, sp, #16
+    stur lr, [sp, #0]       // Guardar LR
+
+    // x0 ya tiene el framebuffer_address
+
+    // Cargar puntero a los datos de los rectángulos para zzz_frame1
+    adrp x1, zzz_frame1_data
+    add x1, x1, :lo12:zzz_frame1_data
+
+    // No se necesita pasar el número de rectángulos ni un color global
+    bl draw_sprite_component // Llamar al procedimiento genérico
+
+    ldur lr, [sp, #0]
+    add sp, sp, #16
+    ret
 
 
-/////////////////////////////
-//
-//
-//
-//FRAMES DE OJOS BOCA
-//
-//
-//
-//
-///////////////////////////////
+zzz_frame2:
+    // El framebuffer se pasa en x0 desde el bucle principal 'main'
+    sub sp, sp, #16
+    stur lr, [sp, #0]       // Guardar LR
 
+    // x0 ya tiene el framebuffer_address
 
+    // Cargar puntero a los datos de los rectángulos para zzz_frame1
+    adrp x1, zzz_frame2_data
+    add x1, x1, :lo12:zzz_frame2_data
 
-/////////////////////////////
-//
-//
-//
-//FRAMES ZZZ
-//
-//
-//
-//
-///////////////////////////////
+    // No se necesita pasar el número de rectángulos ni un color global
+    bl draw_sprite_component // Llamar al procedimiento genérico
 
+    ldur lr, [sp, #0]
+    add sp, sp, #16
+    ret
 
+zzz_frame3:
+    // El framebuffer se pasa en x0 desde el bucle principal 'main'
+    sub sp, sp, #16
+    stur lr, [sp, #0]       // Guardar LR
 
-/////////////////////////////
-//
-//
-//
-//FRAMES PASTO
-//
-//
-//
-//
-///////////////////////////////
+    // x0 ya tiene el framebuffer_address
+
+    // Cargar puntero a los datos de los rectángulos para zzz_frame1
+    adrp x1, zzz_frame3_data
+    add x1, x1, :lo12:zzz_frame3_data
+
+    // No se necesita pasar el número de rectángulos ni un color global
+    bl draw_sprite_component // Llamar al procedimiento genérico
+
+    ldur lr, [sp, #0]
+    add sp, sp, #16
+    ret
+
+pasto_frame1:
+	// El framebuffer se pasa en x0 desde el bucle principal 'main'
+    sub sp, sp, #16
+    stur lr, [sp, #0]       // Guardar LR
+
+    // x0 ya tiene el framebuffer_address
+
+    // Cargar puntero a los datos de los rectángulos para zzz_frame1
+    adrp x1, pasto_frame1_data
+    add x1, x1, :lo12:pasto_frame1_data
+
+    // No se necesita pasar el número de rectángulos ni un color global
+    bl draw_sprite_component // Llamar al procedimiento genérico
+
+    ldur lr, [sp, #0]
+    add sp, sp, #16
+    ret
+pasto_frame2:
+		// El framebuffer se pasa en x0 desde el bucle principal 'main'
+    sub sp, sp, #16
+    stur lr, [sp, #0]       // Guardar LR
+
+    // x0 ya tiene el framebuffer_address
+
+    // Cargar puntero a los datos de los rectángulos para zzz_frame1
+    adrp x1, pasto_frame2_data
+    add x1, x1, :lo12:pasto_frame2_data
+
+    // No se necesita pasar el número de rectángulos ni un color global
+    bl draw_sprite_component // Llamar al procedimiento genérico
+
+    ldur lr, [sp, #0]
+    add sp, sp, #16
+    ret	// El framebuffer se pasa en x0 desde el bucle principal 'main'
+    sub sp, sp, #16
+    stur lr, [sp, #0]       // Guardar LR
+
+    // x0 ya tiene el framebuffer_address
+
+    // Cargar puntero a los datos de los rectángulos para zzz_frame1
+    adrp x1, pasto_frame3_data
+    add x1, x1, :lo12:pasto_frame3_data
+
+    // No se necesita pasar el número de rectángulos ni un color global
+    bl draw_sprite_component // Llamar al procedimiento genérico
+
+    ldur lr, [sp, #0]
+    add sp, sp, #16
+    ret
+pasto_frame3:
+	// El framebuffer se pasa en x0 desde el bucle principal 'main'
+    sub sp, sp, #16
+    stur lr, [sp, #0]       // Guardar LR
+
+    // x0 ya tiene el framebuffer_address
+
+    // Cargar puntero a los datos de los rectángulos para zzz_frame1
+    adrp x1, pasto_frame4_data
+    add x1, x1, :lo12:pasto_frame4_data
+
+    // No se necesita pasar el número de rectángulos ni un color global
+    bl draw_sprite_component // Llamar al procedimiento genérico
+
+    ldur lr, [sp, #0]
+    add sp, sp, #16
+    ret
+pasto_frame4:
+	// El framebuffer se pasa en x0 desde el bucle principal 'main'
+    sub sp, sp, #16
+    stur lr, [sp, #0]       // Guardar LR
+
+    // x0 ya tiene el framebuffer_address
+
+    // Cargar puntero a los datos de los rectángulos para zzz_frame1
+    adrp x1, pasto_frame1_data
+    add x1, x1, :lo12:pasto_frame1_data
+
+    // No se necesita pasar el número de rectángulos ni un color global
+    bl draw_sprite_component // Llamar al procedimiento genérico
+
+    ldur lr, [sp, #0]
+    add sp, sp, #16
+    ret
 
 
 bimo_frame:
