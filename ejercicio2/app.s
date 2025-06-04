@@ -1,69 +1,135 @@
-	.equ SCREEN_WIDTH, 		640
-	.equ SCREEN_HEIGH, 		480
-	.equ BITS_PER_PIXEL,  	32
+.include "figuras.s"
 
-	.equ GPIO_BASE,      0x3f200000
-	.equ GPIO_GPFSEL0,   0x00
-	.equ GPIO_GPLEV0,    0x34
+.data
+hormiga_x: .quad 632
 
-	.data
+fondo:       .quad    pasto_frame1,     pasto_frame2,     pasto_frame3,    pasto_frame4
+bimo:        .quad    bimo_frame,       bimo_frame,       bimo_frame,      bimo_frame
+bimo_ext:    .quad    bimo_ext_frame,       bimo_ext_frame,       bimo_ext_frame,      bimo_ext_frame
+zzz:         .quad    zzz_frame1,       zzz_frame2,       zzz_frame3,      zzz_frame2
+_ojos_boca:  .quad    ojos_boca_frame1, ojos_boca_frame2, ojos_boca_frame3,ojos_boca_frame2
 
-	//FONDO
-	//BIMO
-	//ZZZ
-	//_OJOS_BOCA
+.text
+.globl main
 
-	.globl main
+update_hormiga:
+    sub sp, sp, #48      
+    stur lr, [sp, #40]    
+    stur x19, [sp, #32]  
+    stur x20, [sp, #24]   
+    stur x21, [sp, #16]  
+
+    mov x19, x0          
+    ldr x20, =hormiga_x  
+
+    mov w21, #0xFF000000  
+    
+    mov x0, x19           
+    mov x1, x21           
+    ldr w2, [x20, #0]     
+    mov w3, #216          
+    mov w4, #8            
+    mov w5, #8            
+    mov x6, SCREEN_WIDTH  
+
+    subs w2, w2, #8       
+    cmp w2, #-16            
+    ble resetear_pos      
+                          
+    str w2, [x20, #0]
+
+    cmp w2, #-8
+    ble skip_drawing      
+    
+    b dibujar_hormiga_actual
+
+resetear_pos:
+    mov w2, #(640 - 16)    
+
+dibujar_hormiga_actual:
+    str w2, [x20, #0]     
+    bl draw_rect          
+
+    movz w21, #0x762B, lsl 0 
+    movk w21, #0xFF43, lsl 16
+
+    mov x0, x19
+    mov x1, x21           
+    ldr w2, [x20, #0]    
+    add w2, w2, #8       
+    mov w3, #216          
+    bl draw_rect
+
+    mov x0, x19
+    mov x1, x21          
+    ldr w2, [x20, #0]   
+    mov w3, #216
+    add w3, w3, #8       
+    bl draw_rect
+
+skip_drawing:
+
+    ldur x21, [sp, #16]
+    ldur x20, [sp, #24]
+    ldur x19, [sp, #32]
+    ldur lr, [sp, #40]
+    add sp, sp, #48    
+    ret
 
 main:
-	// x0 contiene la direccion base del framebuffer
- 	mov x20, x0	// Guarda la dirección base del framebuffer en x20
-	//---------------- CODE HERE ------------------------------------
+    mov x20, x0               // Guardar framebuffer en x20
 
-	//ADRP BIMO
+    adrp x25, bimo_ext
+    add x25, x25, :lo12:bimo_ext
+    adrp x26, fondo
+    add x26, x26, :lo12:fondo
+    adrp x27, bimo
+    add x27, x27, :lo12:bimo
+    adrp x28, zzz
+    add x28, x28, :lo12:zzz
+    adrp x29, _ojos_boca
+    add x29, x29, :lo12:_ojos_boca
 
-	//ADRP FONDO
+animacion:
+    mov x21, #0               // i = 0
 
-	//ADRP ZZZ
+loop_start:
+    cmp x21, #4
+    b.ge animacion              // fin del bucle (reinicia la animación)
 
-	//ADRP OJOS BOCA
+    // 1. DIBUJAR TODO EL FONDO Y ELEMENTOS DECORATIVOS
+    bl dibujar_fondo          // Asumiendo que este es el fondo principal
+    
+    mov x0, x20
+    bl update_hormiga   
+    
+    lsl x22, x21, #3
+    add x23, x25, x22         // &fondo[i]
+    ldr x24, [x23]
+    blr x24                   // Llamar a pasto_frameX (si es diferente de dibujar_fondo)
 
+    lsl x22, x21, #3
+    add x23, x26, x22         // &bimo_ext[i]
+    ldr x24, [x23]
+    blr x24                   // Llamar a bimo_ext_frame
 
-	movz x10, 0xC7, lsl 16
-	movk x10, 0x1585, lsl 00
+    lsl x22, x21, #3
+    add x23, x27, x22         // &bimo[i]
+    ldr x24, [x23]
+    blr x24                   // Llamar a bimo_frame
+    
+    lsl x22, x21, #3
+    add x23, x28, x22         // &zzz[i]
+    ldr x24, [x23]
+    blr x24                   // Llamar a zzz_frame
 
-	mov x2, SCREEN_HEIGH         // Y Size
-loop1:
-	mov x1, SCREEN_WIDTH         // X Size
-loop0:
-	stur w10,[x0]  // Colorear el pixel N
-	add x0,x0,4	   // Siguiente pixel
-	sub x1,x1,1	   // Decrementar contador X
-	cbnz x1,loop0  // Si no terminó la fila, salto
-	sub x2,x2,1	   // Decrementar contador Y
-	cbnz x2,loop1  // Si no es la última fila, salto
+    lsl x22, x21, #3
+    add x23, x29, x22         // &_ojos_boca[i]
+    ldr x24, [x23]
+    blr x24                   // Llamar a ojos_boca_frame
+    
+    bl delay
 
-	// Ejemplo de uso de gpios
-	mov x9, GPIO_BASE
+    add x21, x21, #1
+    b loop_start
 
-	// Atención: se utilizan registros w porque la documentación de broadcom
-	// indica que los registros que estamos leyendo y escribiendo son de 32 bits
-
-	// Setea gpios 0 - 9 como lectura
-	str wzr, [x9, GPIO_GPFSEL0]
-
-	// Lee el estado de los GPIO 0 - 31
-	ldr w10, [x9, GPIO_GPLEV0]
-
-	// And bit a bit mantiene el resultado del bit 2 en w10
-	and w11, w10, 0b10
-
-	// w11 será 1 si había un 1 en la posición 2 de w10, si no será 0
-	// efectivamente, su valor representará si GPIO 2 está activo
-	lsr w11, w11, 1
-
-	//---------------------------------------------------------------
-	// Infinite Loop
-
-InfLoop:
-	b InfLoop

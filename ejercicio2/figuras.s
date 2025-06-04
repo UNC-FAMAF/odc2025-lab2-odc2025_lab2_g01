@@ -578,3 +578,4 @@ end_bimo_ext:
     ldur lr, [sp,#0]
     add sp, sp, #64
     ret
+    
