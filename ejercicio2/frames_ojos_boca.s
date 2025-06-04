@@ -31,3 +31,4 @@ ojos_boca_frame3_data:
     .quad VERDE_RAROVICH 
     .word 0, 0, 0, 0  
     .quad 0  
+ 
