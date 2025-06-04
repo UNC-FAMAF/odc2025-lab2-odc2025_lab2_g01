@@ -195,7 +195,8 @@ draw_pixel:
 	ret
 
 delay:
-    mov x10, 0xfffffff         // Ajusta este número si va muy rápido/lento
+    movz w10, #0x0000, lsl 0  
+    movk w10, #0x0600, lsl 16
 delay_loop:
     subs x10, x10, #1
     b.ne delay_loop
