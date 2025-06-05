@@ -10,12 +10,14 @@ zzz_frame1_data:
     .word 0, 0, 0, 0    
     .quad 0             
 zzz_frame2_data:
-    .word 138, 65, 23, 31
+    .word 138, 65, 23, 8
     .quad Z 
-    .word 138, 73, 8, 8  
-    .quad VERDE_FONDO 
-    .word 153, 80, 8, 9    
-    .quad VERDE_FONDO
+    .word 145, 73, 16, 8
+    .quad Z 
+    .word 138, 81, 16, 8
+    .quad Z 
+    .word 138, 89, 23, 8
+    .quad Z 
     .word 0, 0, 0, 0  
     .quad 0  
 zzz_frame3_data:

@@ -1,7 +1,5 @@
 .include "figuras.s"
 
-.data
-hormiga_x: .quad 632
 
 fondo:       .quad    pasto_frame1,     pasto_frame2,     pasto_frame3,    pasto_frame4
 bimo:        .quad    bimo_frame,       bimo_frame,       bimo_frame,      bimo_frame
@@ -12,69 +10,7 @@ _ojos_boca:  .quad    ojos_boca_frame1, ojos_boca_frame2, ojos_boca_frame3,ojos_
 .text
 .globl main
 
-update_hormiga:
-    sub sp, sp, #48      
-    stur lr, [sp, #40]    
-    stur x19, [sp, #32]  
-    stur x20, [sp, #24]   
-    stur x21, [sp, #16]  
-
-    mov x19, x0          
-    ldr x20, =hormiga_x  
-
-    mov w21, #0xFF000000  
-    
-    mov x0, x19           
-    mov x1, x21           
-    ldr w2, [x20, #0]     
-    mov w3, #216          
-    mov w4, #8            
-    mov w5, #8            
-    mov x6, SCREEN_WIDTH  
-
-    subs w2, w2, #8       
-    cmp w2, #-16            
-    ble resetear_pos      
-                          
-    str w2, [x20, #0]
-
-    cmp w2, #-8
-    ble skip_drawing      
-    
-    b dibujar_hormiga_actual
-
-resetear_pos:
-    mov w2, #(640 - 16)    
-
-dibujar_hormiga_actual:
-    str w2, [x20, #0]     
-    bl draw_rect          
-
-    movz w21, #0x762B, lsl 0 
-    movk w21, #0xFF43, lsl 16
-
-    mov x0, x19
-    mov x1, x21           
-    ldr w2, [x20, #0]    
-    add w2, w2, #8       
-    mov w3, #216          
-    bl draw_rect
-
-    mov x0, x19
-    mov x1, x21          
-    ldr w2, [x20, #0]   
-    mov w3, #216
-    add w3, w3, #8       
-    bl draw_rect
-
-skip_drawing:
-
-    ldur x21, [sp, #16]
-    ldur x20, [sp, #24]
-    ldur x19, [sp, #32]
-    ldur lr, [sp, #40]
-    add sp, sp, #48    
-    ret
+bl update_hormiga
 
 main:
     mov x20, x0               // Guardar framebuffer en x20

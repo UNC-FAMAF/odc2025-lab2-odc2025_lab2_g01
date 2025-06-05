@@ -17,9 +17,9 @@ piedras_data:
     .quad GRIS
     .word 365, 437, 77, 8
     .quad GRIS
-    .word 456, 445, 15, 23
+    .word 131, 79, 15, 23
     .quad GRIS
-    .word 448, 452, 31, 8
+    .word 124, 87, 31, 8
     .quad GRIS
     .word 25, 104, 77, 8
     .quad GRIS
@@ -41,13 +41,11 @@ sombras_piedras_data:
     .quad SOMBRA_P
     .word 373, 452, 61, 8
     .quad SOMBRA_P
-    .word 448, 460, 8, 8
+    .word 124, 94, 8, 8
     .quad SOMBRA_P
-    .word 456, 468, 15, 7
+    .word 131, 101, 15, 7
     .quad SOMBRA_P
-    .word 471, 460, 8, 8
-    .quad SOMBRA_P
-    .word 448, 460, 8, 8
+    .word 146, 94, 9, 8
     .quad SOMBRA_P
     .word 108, 452, 8, 8
     .quad SOMBRA_P
@@ -62,6 +60,8 @@ sombras_piedras_data:
     .word 510, 172, 29, 8
     .quad SOMBRA_P
     .word 25, 112, 8, 7
+    .quad SOMBRA_P
+    .word 93, 112, 9, 7
     .quad SOMBRA_P
     .word 33, 119, 61, 8
     .quad SOMBRA_P
